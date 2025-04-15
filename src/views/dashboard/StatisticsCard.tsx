@@ -66,7 +66,7 @@ const StatisticsCard = (props: Props) => {
   // ** Vars
   const salesData: DataType[] = [
     {
-      stats: statsData?.sale?.total?.toLocaleString() || '',
+      stats: String(statsData?.order?.total),
       title: 'فروش',
       color: 'primary',
       icon: <TrendingUp sx={{ fontSize: '1.75rem' }} />
