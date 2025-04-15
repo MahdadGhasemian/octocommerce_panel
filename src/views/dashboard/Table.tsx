@@ -37,7 +37,6 @@ const statusObj: StatusObj = {
 
 const paymentTypeObj: StatusObj = {
   [PaymentType.RECEIPT]: { sxColor: 'grey.800', text: 'رسید بانکی' },
-  [PaymentType.DEBIT]: { color: 'error', text: 'بدهی' },
   [PaymentType.ONLINE]: { color: 'info', text: 'آنلاین' }
 }
 
@@ -58,7 +57,7 @@ const DashboardTable = () => {
         const response = await BasicService.getAllPayment(10, 1, undefined, [], sorting)
 
         setData(response.data)
-      } catch (error) {}
+      } catch (error) { }
     }
     fetchData()
   }, [])

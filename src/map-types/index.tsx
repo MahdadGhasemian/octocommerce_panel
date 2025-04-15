@@ -30,7 +30,6 @@ export const DeliveryPricingTypeMap = new Map<DeliveryPricingType, string>([
 
 export const PaymentTypeMap = new Map<PaymentType, string>([
   [PaymentType.RECEIPT, 'واریز به حساب'],
-  [PaymentType.DEBIT, 'بدهی'],
   [PaymentType.ONLINE, 'آنلاین']
 ])
 

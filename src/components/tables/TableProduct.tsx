@@ -278,7 +278,7 @@ const TableProduct = (props: TableProductProps) => {
             await BasicService.deleteProduct(id)
 
             setRefreshKey(key => key + 1)
-          } catch (error) {}
+          } catch (error) { }
         })
         .catch()
     }
@@ -312,7 +312,7 @@ const TableProduct = (props: TableProductProps) => {
       dispatch(toastSuccess('محصول جدید با موفقیت ایجاد شد.'))
 
       setRefreshKey(key => key + 1)
-    } catch (error) {}
+    } catch (error) { }
   }, [])
 
   const getCommonEditTextFieldProps = useCallback(
@@ -325,8 +325,8 @@ const TableProduct = (props: TableProductProps) => {
             cell.column.id === 'email'
               ? validateEmail(event.target.value)
               : cell.column.id === 'age'
-              ? validateAge(+event.target.value)
-              : validateRequired(event.target.value)
+                ? validateAge(+event.target.value)
+                : validateRequired(event.target.value)
           if (!isValid) {
             //set validation error for cell if invalid
             setValidationErrors({
@@ -611,9 +611,9 @@ const TableProduct = (props: TableProductProps) => {
         muiToolbarAlertBannerProps={
           isError
             ? {
-                color: 'error',
-                children: 'خطا در دریافت اطلاعات'
-              }
+              color: 'error',
+              children: 'خطا در دریافت اطلاعات'
+            }
             : undefined
         }
         onColumnFiltersChange={setColumnFilters}
@@ -918,7 +918,7 @@ export const CreateEditModal = ({
                 label='کد کالا'
                 name='product_code'
                 value={values.product_code}
-                onChange={e => setValues({ ...values, [e.target.name]: e.target.value })}
+                disabled
                 fullWidth
               />
             </Grid>

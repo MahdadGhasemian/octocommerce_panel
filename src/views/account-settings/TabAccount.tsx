@@ -93,7 +93,7 @@ const TabAccount = () => {
             .finally(() => {
               setImageLoading(false)
             })
-        } catch (error) {}
+        } catch (error) { }
       }
     }
   }
@@ -174,7 +174,7 @@ const TabAccount = () => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField fullWidth label='شماره موبایل' defaultValue={account.mobile_phone} disabled />
+            <TextField fullWidth label='شماره موبایل' defaultValue={account.mobile_phone} disabled dir='ltr' />
           </Grid>
           {/* <Grid item xs={12} sm={6}>
             <FormControl fullWidth>

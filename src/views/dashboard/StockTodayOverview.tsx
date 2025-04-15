@@ -123,7 +123,7 @@ const StockTodayOverview = (props: Props) => {
   return (
     <Card>
       <CardHeader
-        title='فروش امروز - موجودی'
+        title='فروش امروز'
         titleTypographyProps={{
           sx: { lineHeight: '2rem !important', letterSpacing: '0.15px !important' }
         }}

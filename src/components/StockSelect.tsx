@@ -134,7 +134,6 @@ const StockSelect = (props: Props) => {
                 fullWidth
                 type='number'
                 label='تعداد'
-                disabled
                 defaultValue={values.quantity}
                 InputLabelProps={{
                   shrink: true

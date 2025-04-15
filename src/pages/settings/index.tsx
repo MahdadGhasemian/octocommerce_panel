@@ -22,7 +22,8 @@ const Settings = () => {
     tax_rate_default: 0,
     base_price_scale_amount: 0,
     delivery_center_latitude: 35.7172,
-    delivery_center_longitude: 51.3995
+    delivery_center_longitude: 51.3995,
+    product_code_prefix: ''
   })
 
   // ** Confirm
@@ -41,7 +42,8 @@ const Settings = () => {
           tax_rate_default: Number(setting?.tax_rate_default || 0),
           base_price_scale_amount: Number(setting?.base_price_scale_amount || 0),
           delivery_center_latitude: Number(setting?.delivery_center_latitude || 0),
-          delivery_center_longitude: Number(setting?.delivery_center_longitude || 0)
+          delivery_center_longitude: Number(setting?.delivery_center_longitude || 0),
+          product_code_prefix: setting?.product_code_prefix
         })
         setSetting(result)
 
@@ -163,6 +165,19 @@ const Settings = () => {
                     InputLabelProps={{
                       shrink: true
                     }}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    fullWidth
+                    label='پیشوند کد کالا'
+                    placeholder=''
+                    defaultValue={setting?.product_code_prefix}
+                    value={setting?.product_code_prefix}
+                    onChange={e => {
+                      setSetting({ ...setting, product_code_prefix: e.target.value })
+                    }}
+                    dir='ltr'
                   />
                 </Grid>
                 <Grid item xs={12}>

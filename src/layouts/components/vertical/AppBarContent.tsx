@@ -1,14 +1,14 @@
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import { Theme } from '@mui/material/styles'
-import TextField from '@mui/material/TextField'
+// import TextField from '@mui/material/TextField'
 import IconButton from '@mui/material/IconButton'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import InputAdornment from '@mui/material/InputAdornment'
+// import InputAdornment from '@mui/material/InputAdornment'
 
 // ** Icons Imports
 import Menu from 'mdi-material-ui/Menu'
-import Magnify from 'mdi-material-ui/Magnify'
+// import Magnify from 'mdi-material-ui/Magnify'
 
 // ** Type Import
 import { Settings } from '@/context/settingsContext'
@@ -18,7 +18,6 @@ import UserLogin from '@/layouts/components/shared-components/UserLogin'
 import ModeToggler from '@/layouts/components/shared-components/ModeToggler'
 import UserDropdown from '@/layouts/components/shared-components/UserDropdown'
 import NotificationDropdown from '@/layouts/components/shared-components/NotificationDropdown'
-import TaskNotificationDropdown from '@/layouts/components/shared-components/TaskNotificationDropdown'
 
 // ** Redux Imports
 import { useSelector } from 'react-redux'
@@ -57,7 +56,7 @@ const AppBarContent = (props: Props) => {
             <Menu />
           </IconButton>
         ) : null}
-        {!hiddenSm && (
+        {/* {!hiddenSm && (
           <TextField
             size='small'
             sx={{ '& .MuiOutlinedInput-root': { borderRadius: 4 } }}
@@ -69,7 +68,7 @@ const AppBarContent = (props: Props) => {
               )
             }}
           />
-        )}
+        )} */}
         <Stack sx={{ marginX: 10 }} direction='row' spacing={2}>
           <Hidden smDown>
             <Typography>امروز :‌ </Typography>
@@ -81,13 +80,12 @@ const AppBarContent = (props: Props) => {
         {hiddenSm ? null : <Box></Box>}
 
         {isLogin ? (
-          <Stack direction='row'>
+          <Stack direction='row' gap={2}>
             <Hidden smDown>
               <ModeToggler settings={settings} saveSettings={saveSettings} />
             </Hidden>
             {/* <ThemColorSelect settings={settings} saveSettings={saveSettings} /> */}
             <NotificationDropdown />
-            <TaskNotificationDropdown />
             <UserDropdown />
           </Stack>
         ) : (

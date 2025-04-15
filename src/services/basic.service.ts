@@ -32,7 +32,6 @@ export enum PaymentStatus {
 
 export enum PaymentType {
   RECEIPT = 'receipt',
-  DEBIT = 'debit',
   ONLINE = 'online'
 }
 
@@ -136,6 +135,7 @@ export type Setting = {
   base_price_scale_amount: number
   delivery_center_latitude: number
   delivery_center_longitude: number
+  product_code_prefix?: string
 }
 
 export type StockInfoModel = {
