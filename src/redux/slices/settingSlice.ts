@@ -10,7 +10,8 @@ const initialState: SettingState = {
   tax_rate_default: 0,
   base_price_scale_amount: 0,
   delivery_center_latitude: 0,
-  delivery_center_longitude: 0
+  delivery_center_longitude: 0,
+  product_code_prefix: ''
 }
 
 export const settingSlice = createSlice({
