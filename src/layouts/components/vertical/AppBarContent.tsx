@@ -18,7 +18,6 @@ import UserLogin from '@/layouts/components/shared-components/UserLogin'
 import ModeToggler from '@/layouts/components/shared-components/ModeToggler'
 import UserDropdown from '@/layouts/components/shared-components/UserDropdown'
 import NotificationDropdown from '@/layouts/components/shared-components/NotificationDropdown'
-import TaskNotificationDropdown from '@/layouts/components/shared-components/TaskNotificationDropdown'
 
 // ** Redux Imports
 import { useSelector } from 'react-redux'
@@ -81,13 +80,12 @@ const AppBarContent = (props: Props) => {
         {hiddenSm ? null : <Box></Box>}
 
         {isLogin ? (
-          <Stack direction='row'>
+          <Stack direction='row' gap={2}>
             <Hidden smDown>
               <ModeToggler settings={settings} saveSettings={saveSettings} />
             </Hidden>
             {/* <ThemColorSelect settings={settings} saveSettings={saveSettings} /> */}
             <NotificationDropdown />
-            <TaskNotificationDropdown />
             <UserDropdown />
           </Stack>
         ) : (

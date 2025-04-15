@@ -1,6 +1,9 @@
 // ** React Imports
 import { useState, SyntheticEvent, Fragment, ReactNode } from 'react'
 
+// ** Next Imports
+import { useRouter } from 'next/router'
+
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
@@ -100,6 +103,7 @@ const NotificationDropdown = () => {
 
   // ** Hook
   const hidden = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
+  const router = useRouter()
   const { settings } = useSettings()
 
   const handleDropdownOpen = (event: SyntheticEvent) => {
@@ -148,6 +152,14 @@ const NotificationDropdown = () => {
       const question_id = message.data?.id
 
       window.open(`/question/list/?id=${question_id}`)
+    } else if (type === MessageType.NewBoard) {
+      const board_id = message.data?.id
+
+      router.push(`/tasks/board/view/?id=${board_id}`)
+    } else if (type === MessageType.EditBoard) {
+      const board_id = message.data?.id
+
+      router.push(`/tasks/board/view/?id=${board_id}`)
     }
 
     settings.socket?.emit('message_viewed', { id, is_viewed: true })
@@ -155,6 +167,7 @@ const NotificationDropdown = () => {
 
   const handleTickUnreadMessagesAsRead = () => {
     settings.socket?.emit('all_default_group_messages_viewed', { is_viewed: true })
+    settings.socket?.emit('all_board_group_messages_viewed', { is_viewed: true })
     handleDropdownClose()
   }
 
@@ -163,7 +176,7 @@ const NotificationDropdown = () => {
       <IconButton color='inherit' aria-haspopup='true' onClick={handleDropdownOpen} aria-controls='customized-menu'>
         <Badge
           overlap='circular'
-          sx={{ ml: 2, cursor: 'pointer' }}
+          sx={{ cursor: 'pointer' }}
           badgeContent={unreadCount}
           color='primary'
           anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
