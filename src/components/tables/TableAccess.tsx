@@ -138,7 +138,7 @@ const TableAccess = () => {
       }
 
       setRefreshKey(key => key + 1)
-    } catch (error) {}
+    } catch (error) { }
   }
 
   const handleDeleteRow = useCallback(async (row: MRT_Row<Access>) => {
@@ -152,7 +152,7 @@ const TableAccess = () => {
             await AuthService.deleteAccess(id)
 
             setRefreshKey(key => key + 1)
-          } catch (error) {}
+          } catch (error) { }
         })
         .catch()
     }
@@ -267,39 +267,6 @@ const TableAccess = () => {
           width: 10
         }
       },
-      // {
-      //   accessorKey: 'notification_order_created',
-      //   header: 'پیام های سفارش جدید',
-      //   size: 200,
-      //   enableEditing: true,
-      //   enableColumnOrdering: true,
-      //   Cell: ({ cell }) => <Checkbox checked={Boolean(cell.getValue())} />,
-      //   exportData: {
-      //     width: 10
-      //   }
-      // },
-      // {
-      //   accessorKey: 'notification_payment_created',
-      //   header: 'پیام های پرداخت جدید',
-      //   size: 200,
-      //   enableEditing: true,
-      //   enableColumnOrdering: true,
-      //   Cell: ({ cell }) => <Checkbox checked={Boolean(cell.getValue())} />,
-      //   exportData: {
-      //     width: 10
-      //   }
-      // },
-      // {
-      //   accessorKey: 'notification_delivery_created',
-      //   header: 'پیام های مشخصات حمل جدید',
-      //   size: 200,
-      //   enableEditing: true,
-      //   enableColumnOrdering: true,
-      //   Cell: ({ cell }) => <Checkbox checked={Boolean(cell.getValue())} />,
-      //   exportData: {
-      //     width: 10
-      //   }
-      // },
       {
         accessorKey: 'description',
         header: 'توضیح',
@@ -341,9 +308,9 @@ const TableAccess = () => {
         muiToolbarAlertBannerProps={
           isError
             ? {
-                color: 'error',
-                children: 'خطا در دریافت اطلاعات'
-              }
+              color: 'error',
+              children: 'خطا در دریافت اطلاعات'
+            }
             : undefined
         }
         onColumnFiltersChange={setColumnFilters}
