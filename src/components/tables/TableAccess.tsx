@@ -267,39 +267,39 @@ const TableAccess = () => {
           width: 10
         }
       },
-      {
-        accessorKey: 'notification_order_created',
-        header: 'پیام های سفارش جدید',
-        size: 200,
-        enableEditing: true,
-        enableColumnOrdering: true,
-        Cell: ({ cell }) => <Checkbox checked={Boolean(cell.getValue())} />,
-        exportData: {
-          width: 10
-        }
-      },
-      {
-        accessorKey: 'notification_payment_created',
-        header: 'پیام های پرداخت جدید',
-        size: 200,
-        enableEditing: true,
-        enableColumnOrdering: true,
-        Cell: ({ cell }) => <Checkbox checked={Boolean(cell.getValue())} />,
-        exportData: {
-          width: 10
-        }
-      },
-      {
-        accessorKey: 'notification_delivery_created',
-        header: 'پیام های مشخصات حمل جدید',
-        size: 200,
-        enableEditing: true,
-        enableColumnOrdering: true,
-        Cell: ({ cell }) => <Checkbox checked={Boolean(cell.getValue())} />,
-        exportData: {
-          width: 10
-        }
-      },
+      // {
+      //   accessorKey: 'notification_order_created',
+      //   header: 'پیام های سفارش جدید',
+      //   size: 200,
+      //   enableEditing: true,
+      //   enableColumnOrdering: true,
+      //   Cell: ({ cell }) => <Checkbox checked={Boolean(cell.getValue())} />,
+      //   exportData: {
+      //     width: 10
+      //   }
+      // },
+      // {
+      //   accessorKey: 'notification_payment_created',
+      //   header: 'پیام های پرداخت جدید',
+      //   size: 200,
+      //   enableEditing: true,
+      //   enableColumnOrdering: true,
+      //   Cell: ({ cell }) => <Checkbox checked={Boolean(cell.getValue())} />,
+      //   exportData: {
+      //     width: 10
+      //   }
+      // },
+      // {
+      //   accessorKey: 'notification_delivery_created',
+      //   header: 'پیام های مشخصات حمل جدید',
+      //   size: 200,
+      //   enableEditing: true,
+      //   enableColumnOrdering: true,
+      //   Cell: ({ cell }) => <Checkbox checked={Boolean(cell.getValue())} />,
+      //   exportData: {
+      //     width: 10
+      //   }
+      // },
       {
         accessorKey: 'description',
         header: 'توضیح',
