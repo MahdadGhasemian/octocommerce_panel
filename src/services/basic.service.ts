@@ -79,13 +79,7 @@ export enum TransactionType {
 }
 
 export enum TransactionNote {
-  DiscountProfit = 'discount_profit',
-  BonusProfit = 'bonus_profit'
-}
-
-export enum BonusType {
-  Constant = 'constant',
-  Percentage = 'percentage'
+  DiscountProfit = 'discount_profit'
 }
 
 export enum RecommendationType {
@@ -509,22 +503,6 @@ export type WalletTransaction = {
     id: number
     order_invoice_number: number
   }
-  created_at: Date
-  updated_at: Date
-}
-
-export type Bonus = {
-  id: number
-  title: string
-  description: string
-  bonus_type: BonusType
-  constant_amount: number
-  percentage_amount: number
-  is_enabled: boolean
-  start_date: Date
-  end_date: Date
-  allowed_users: User[]
-  allowed_products: Product[]
   created_at: Date
   updated_at: Date
 }
@@ -1162,49 +1140,6 @@ class BasicService {
       .then(response => {
         return response?.data
       })
-  }
-
-  // Bonus
-  getAllBonus(
-    limit?: number,
-    page?: number,
-    search?: string,
-    columnFilters?: InputColumnFiltersModel[],
-    sorting?: InputSortingModel[]
-  ): Promise<ApiListResponse<Bonus>> {
-    const params = createParams(limit, page, search, columnFilters, sorting)
-
-    return api
-      .get('/store/bonuses', {
-        params
-      })
-      .then(response => {
-        return response?.data
-      })
-  }
-
-  createBonus(bonus: Partial<Bonus>): Promise<Bonus> {
-    return api.post('/store/bonuses', bonus).then(response => {
-      return response?.data
-    })
-  }
-
-  getBonus(id: number): Promise<Bonus> {
-    return api.get(`/store/bonuses/${id}`).then(response => {
-      return response?.data
-    })
-  }
-
-  editBonus(id: number, bonus: Partial<Bonus>): Promise<Bonus> {
-    return api.patch(`/store/bonuses/${id}`, bonus).then(response => {
-      return response?.data
-    })
-  }
-
-  deleteBonus(id: number): Promise<unknown> {
-    return api.delete(`/store/bonuses/${id}`).then(response => {
-      return response?.data
-    })
   }
 
   // Review

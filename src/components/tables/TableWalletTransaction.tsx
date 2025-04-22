@@ -31,8 +31,6 @@ const typeInformation = (transactionNote: TransactionNote, wallet_transaction: P
 
   if (transactionNote === TransactionNote.DiscountProfit) {
     return order_invoice_number ? `سود خرید بابت سفارش ${order_invoice_number}` : `سود خرید`
-  } else if (transactionNote === TransactionNote.BonusProfit) {
-    return order_invoice_number ? `پاداش خرید بابت سفارش ${order_invoice_number}` : `پاداش خرید`
   }
 
   return ''

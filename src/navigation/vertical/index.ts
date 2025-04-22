@@ -134,22 +134,12 @@ const navigation = (isInternalUser: boolean): VerticalNavItemsType => {
       hidden
     },
     {
-      sectionTitle: 'کارها',
-      hidden
-    },
-    {
       sectionTitle: 'کیف پول'
     },
     {
       title: 'تراکنش ها',
       icon: WalletOutline,
       path: '/wallet/transactions'
-    },
-    {
-      title: 'پاداش خرید',
-      icon: WalletGiftcard,
-      path: '/bonus/list',
-      hidden
     },
     {
       sectionTitle: 'پشتیبانی',
