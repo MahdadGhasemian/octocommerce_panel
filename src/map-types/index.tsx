@@ -1,5 +1,4 @@
 import {
-  BonusType,
   DeliveryChargeType,
   DeliveryPricingType,
   DeliveryType,
@@ -31,11 +30,6 @@ export const DeliveryPricingTypeMap = new Map<DeliveryPricingType, string>([
 export const PaymentTypeMap = new Map<PaymentType, string>([
   [PaymentType.RECEIPT, 'واریز به حساب'],
   [PaymentType.ONLINE, 'آنلاین']
-])
-
-export const BonusTypeMap = new Map<BonusType, string>([
-  [BonusType.Constant, 'مبلغ مشخص'],
-  [BonusType.Percentage, 'درصد']
 ])
 
 export const MaterialUnitMap = new Map<MaterialUnit, string>([

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://localhost:3007/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/401/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/access/list/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/account-settings/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/account/list/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/category/list/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/contact/list/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/delivery-method/list/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/invoice/list/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/invoice/new/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/invoice/view/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/login/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/packaging-cost/list/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/product/list/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/question/list/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/review/list/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/settings/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/support/sms/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/warehouse/inventory/input/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/warehouse/inventory/input/new/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/warehouse/inventory/output/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/warehouse/inventory/output/new/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/warehouse/inventory/transfer/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/warehouse/inventory/transfer/new/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/warehouse/management/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://localhost:3007/warehouse/stock/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>

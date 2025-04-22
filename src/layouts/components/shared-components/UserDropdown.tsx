@@ -1,11 +1,11 @@
 // ** React Imports
-import { useState, SyntheticEvent, Fragment, useEffect } from 'react'
+import { useState, SyntheticEvent, Fragment } from 'react'
 
 // ** Next Import
 import { useRouter } from 'next/router'
 
 // ** MUI Imports
-import { Box, Menu, Badge, Avatar, MenuItem, Typography, Stack, Button } from '@mui/material'
+import { Box, Menu, Badge, Avatar, MenuItem, Typography, Button } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
 // ** Icons Imports
@@ -29,13 +29,9 @@ import { selectAccount } from '@/redux/slices/authSlice'
 import { resetCart } from '@/redux/slices/cartSlice'
 import { store } from '@/redux/store'
 
-// ** Services Import
-import BasicService from '@/services/basic.service'
-
 const UserDropdown = () => {
   // ** States
   const [anchorEl, setAnchorEl] = useState<Element | null>(null)
-  const [balance, setBalance] = useState<number>(0)
 
   // ** Hooks
   const router = useRouter()
@@ -63,14 +59,9 @@ const UserDropdown = () => {
     }
   }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const myWallet = await BasicService.getMyWallet()
-      setBalance(myWallet.balance)
-    }
-
-    fetchData()
-  }, [])
+  const handleUserSetting = () => {
+    router.push('/account-settings')
+  }
 
   return (
     <Fragment>
@@ -97,28 +88,31 @@ const UserDropdown = () => {
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       >
-        <Box sx={{ pt: 2, pb: 3, px: 4 }}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Badge
-              overlap='circular'
-              badgeContent={<BadgeContentSpan />}
-              anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-            >
-              <Avatar
-                alt={account.full_name}
-                sx={{ width: '2.5rem', height: '2.5rem' }}
-                src={`${account.avatar}?width=120`}
-                imgProps={{ crossOrigin: 'use-credentials' }}
-              />
-            </Badge>
-            <Box sx={{ display: 'flex', marginLeft: 3, alignItems: 'flex-start', flexDirection: 'column' }}>
-              <Typography sx={{ fontWeight: 600 }}>{account.full_name}</Typography>
-              <Typography variant='body2' sx={{ fontSize: '0.8rem', color: 'text.disabled' }}>
-                {account.full_name}
-              </Typography>
+        <Button fullWidth onClick={handleUserSetting}>
+          <Box sx={{ pt: 2, pb: 3, px: 4 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Badge
+                overlap='circular'
+                badgeContent={<BadgeContentSpan />}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+              >
+                <Avatar
+                  alt={account.full_name}
+                  sx={{ width: '2.5rem', height: '2.5rem' }}
+                  src={`${account.avatar}?width=120`}
+                  imgProps={{ crossOrigin: 'use-credentials' }}
+                />
+              </Badge>
+              <Box sx={{ display: 'flex', marginLeft: 3, alignItems: 'flex-start', flexDirection: 'column' }}>
+                <Typography sx={{ fontWeight: 600 }}>{account.full_name}</Typography>
+                <Typography variant='body2' sx={{ fontSize: '0.8rem', color: 'text.disabled' }}>
+                  {account.full_name}
+                </Typography>
+              </Box>
             </Box>
           </Box>
-        </Box>
+        </Button>
+
         {/* <Divider sx={{ mt: 0, mb: 1 }} />
         <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
           <Box sx={styles}>
@@ -158,16 +152,6 @@ const UserDropdown = () => {
           </Box>
         </MenuItem>
         <Divider /> */}
-
-        <MenuItem sx={{ py: 2 }} onClick={() => handleDropdownClose('/wallet/transactions', false)}>
-          <Button variant='outlined' fullWidth>
-            <Stack direction='row' spacing={2}>
-              <Typography>موجودی</Typography>
-              <Typography>{new Intl.NumberFormat().format(balance)}</Typography>
-              <Typography>ریال</Typography>
-            </Stack>
-          </Button>
-        </MenuItem>
 
         <MenuItem sx={{ py: 2 }} onClick={() => handleDropdownClose('/login', true)}>
           <LogoutVariant sx={{ marginRight: 2, fontSize: '1.375rem', color: 'text.secondary' }} />
