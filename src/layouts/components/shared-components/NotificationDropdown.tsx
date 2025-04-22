@@ -152,14 +152,6 @@ const NotificationDropdown = () => {
       const question_id = message.data?.id
 
       window.open(`/question/list/?id=${question_id}`)
-    } else if (type === MessageType.NewBoard) {
-      const board_id = message.data?.id
-
-      router.push(`/tasks/board/view/?id=${board_id}`)
-    } else if (type === MessageType.EditBoard) {
-      const board_id = message.data?.id
-
-      router.push(`/tasks/board/view/?id=${board_id}`)
     }
 
     settings.socket?.emit('message_viewed', { id, is_viewed: true })

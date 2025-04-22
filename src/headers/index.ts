@@ -92,22 +92,6 @@ const headers = (
         path: '/warehouse/stock'
       },
       {
-        title: 'کارها',
-        path: '/tasks/board'
-      },
-      {
-        title: 'جزییات کار',
-        path: '/tasks/board/view'
-      },
-      {
-        title: 'جریان کارها',
-        path: '/tasks/board/flow'
-      },
-      {
-        title: 'گروه های کاری',
-        path: '/tasks/project'
-      },
-      {
         title: 'تراکنش ها',
         path: '/wallet/transactions'
       },

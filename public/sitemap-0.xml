@@ -19,11 +19,6 @@
 <url><loc>https://localhost:3007/review/list/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://localhost:3007/settings/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://localhost:3007/support/sms/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3007/tasks/board/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3007/tasks/board/flow/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3007/tasks/board/view/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3007/tasks/label/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3007/tasks/project/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://localhost:3007/wallet/transactions/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://localhost:3007/warehouse/inventory/input/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://localhost:3007/warehouse/inventory/input/new/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>

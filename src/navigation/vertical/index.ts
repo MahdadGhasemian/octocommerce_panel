@@ -138,30 +138,6 @@ const navigation = (isInternalUser: boolean): VerticalNavItemsType => {
       hidden
     },
     {
-      title: 'کارها',
-      icon: CalendarCheckOutline,
-      path: '/tasks/board',
-      disabled: !isInternalUser,
-      openInNewTab: false,
-      hidden
-    },
-    {
-      title: 'جریان کارها',
-      icon: ClipboardFlowOutline,
-      path: '/tasks/board/flow',
-      disabled: !isInternalUser,
-      openInNewTab: false,
-      hidden
-    },
-    {
-      title: 'گروه های کاری',
-      icon: SelectGroup,
-      path: '/tasks/project',
-      disabled: !isInternalUser,
-      openInNewTab: false,
-      hidden
-    },
-    {
       sectionTitle: 'کیف پول'
     },
     {
