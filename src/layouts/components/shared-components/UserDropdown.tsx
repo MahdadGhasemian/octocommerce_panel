@@ -1,11 +1,11 @@
 // ** React Imports
-import { useState, SyntheticEvent, Fragment, useEffect } from 'react'
+import { useState, SyntheticEvent, Fragment } from 'react'
 
 // ** Next Import
 import { useRouter } from 'next/router'
 
 // ** MUI Imports
-import { Box, Menu, Badge, Avatar, MenuItem, Typography, Stack, Button } from '@mui/material'
+import { Box, Menu, Badge, Avatar, MenuItem, Typography, Button } from '@mui/material'
 import { styled } from '@mui/material/styles'
 
 // ** Icons Imports
@@ -29,13 +29,9 @@ import { selectAccount } from '@/redux/slices/authSlice'
 import { resetCart } from '@/redux/slices/cartSlice'
 import { store } from '@/redux/store'
 
-// ** Services Import
-import BasicService from '@/services/basic.service'
-
 const UserDropdown = () => {
   // ** States
   const [anchorEl, setAnchorEl] = useState<Element | null>(null)
-  const [balance, setBalance] = useState<number>(0)
 
   // ** Hooks
   const router = useRouter()
@@ -66,15 +62,6 @@ const UserDropdown = () => {
   const handleUserSetting = () => {
     router.push('/account-settings')
   }
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const myWallet = await BasicService.getMyWallet()
-      setBalance(myWallet.balance)
-    }
-
-    fetchData()
-  }, [])
 
   return (
     <Fragment>
@@ -165,16 +152,6 @@ const UserDropdown = () => {
           </Box>
         </MenuItem>
         <Divider /> */}
-
-        <MenuItem sx={{ py: 2 }} onClick={() => handleDropdownClose('/wallet/transactions', false)}>
-          <Button variant='outlined' fullWidth>
-            <Stack direction='row' spacing={2}>
-              <Typography>موجودی</Typography>
-              <Typography>{new Intl.NumberFormat().format(balance)}</Typography>
-              <Typography>ریال</Typography>
-            </Stack>
-          </Button>
-        </MenuItem>
 
         <MenuItem sx={{ py: 2 }} onClick={() => handleDropdownClose('/login', true)}>
           <LogoutVariant sx={{ marginRight: 2, fontSize: '1.375rem', color: 'text.secondary' }} />

@@ -92,10 +92,6 @@ const headers = (
         path: '/warehouse/stock'
       },
       {
-        title: 'تراکنش ها',
-        path: '/wallet/transactions'
-      },
-      {
         title: 'پیامک',
         path: '/support/sms'
       },

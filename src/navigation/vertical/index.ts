@@ -1,23 +1,17 @@
 // ** Icon imports
 import {
-  AccountCogOutline,
   BookAccountOutline,
   ReceiptTextCheckOutline,
   StoreOutline,
   ShapePlus,
   AccountGroupOutline,
   AccountKeyOutline,
-  CalendarCheckOutline,
   HomeOutline,
   HomeImportOutline,
   HomeExportOutline,
   HomeSwitchOutline,
   ClipboardListOutline,
-  ClipboardFlowOutline,
   CogOutline,
-  WalletOutline,
-  WalletGiftcard,
-  SelectGroup,
   MessageProcessingOutline,
   TruckCargoContainer
 } from 'mdi-material-ui'
@@ -132,14 +126,6 @@ const navigation = (isInternalUser: boolean): VerticalNavItemsType => {
       icon: ClipboardListOutline,
       path: '/warehouse/stock',
       hidden
-    },
-    {
-      sectionTitle: 'کیف پول'
-    },
-    {
-      title: 'تراکنش ها',
-      icon: WalletOutline,
-      path: '/wallet/transactions'
     },
     {
       sectionTitle: 'پشتیبانی',

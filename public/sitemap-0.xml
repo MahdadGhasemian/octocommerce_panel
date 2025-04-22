@@ -18,7 +18,6 @@
 <url><loc>https://localhost:3007/review/list/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://localhost:3007/settings/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://localhost:3007/support/sms/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://localhost:3007/wallet/transactions/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://localhost:3007/warehouse/inventory/input/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://localhost:3007/warehouse/inventory/input/new/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://localhost:3007/warehouse/inventory/output/</loc><lastmod>2025-04-15T10:55:46.978Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
