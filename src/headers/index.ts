@@ -60,38 +60,6 @@ const headers = (
         path: '/invoice/view'
       },
       {
-        title: 'انبارها',
-        path: '/warehouse/management'
-      },
-      {
-        title: 'رسید انبار',
-        path: '/warehouse/inventory/input'
-      },
-      {
-        title: 'رسید انبار جدید',
-        path: '/warehouse/inventory/input/new'
-      },
-      {
-        title: 'حواله انبار',
-        path: '/warehouse/inventory/output'
-      },
-      {
-        title: 'حواله انبار جدید',
-        path: '/warehouse/inventory/output/new'
-      },
-      {
-        title: 'انتقال بین انبارها',
-        path: '/warehouse/inventory/transfer'
-      },
-      {
-        title: 'انتقال بین انبار جدید',
-        path: '/warehouse/inventory/transfer/new'
-      },
-      {
-        title: 'موجودی',
-        path: '/warehouse/stock'
-      },
-      {
         title: 'پیامک',
         path: '/support/sms'
       },

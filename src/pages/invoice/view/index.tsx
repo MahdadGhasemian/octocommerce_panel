@@ -12,13 +12,12 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 
 // ** Icons Imports
-import { CreditCardOutline, ReceiptTextCheckOutline, TruckDeliveryOutline, Warehouse } from 'mdi-material-ui'
+import { CreditCardOutline, ReceiptTextCheckOutline, TruckDeliveryOutline } from 'mdi-material-ui'
 
 // ** Tabs Imports
 import TabInvoiceView from '@/components/view/TabInvoiceView'
 import TabPayment from '@/components/view/TabPayment'
 import TabDelivery from '@/components/view/TabDelivery'
-import TabProduct from '@/components/view/TabProduct'
 
 // ** Redux Imports
 import { useSelector } from 'react-redux'
@@ -159,21 +158,6 @@ const Invoice = (props: { categoriesTree: Array<CategoryTree> }) => {
               }
               disabled={order?.order_status === OrderStatus.Pending || order?.order_status === OrderStatus.Rejected}
             />
-            {!isUser && (
-              <Tab
-                value='product'
-                label={
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Warehouse />
-                    <TabName>
-                      <span>4-</span>
-                      <span>کالا</span>
-                    </TabName>
-                  </Box>
-                }
-                disabled={order?.order_status === OrderStatus.Pending || order?.order_status === OrderStatus.Rejected}
-              />
-            )}
             <Stack
               direction='row'
               justifyContent='flex-end'
@@ -212,9 +196,6 @@ const Invoice = (props: { categoriesTree: Array<CategoryTree> }) => {
           </TabPanel>
           <TabPanel sx={{ p: 0 }} value='delivery'>
             <TabDelivery order={order} isSmallScreen={isSmallScreen} />
-          </TabPanel>
-          <TabPanel sx={{ p: 0 }} value='product'>
-            <TabProduct order={order} isSmallScreen={isSmallScreen} />
           </TabPanel>
         </TabContext>
       </Card>

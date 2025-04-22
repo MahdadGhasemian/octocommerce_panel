@@ -19,7 +19,6 @@ import ApexChartWrapper from '@/styles/libs/react-apexcharts'
 // ** Components Imports
 import Table from '@/views/dashboard/Table'
 import StatisticsCard from '@/views/dashboard/StatisticsCard'
-import StockTodayOverview from '@/views/dashboard/StockTodayOverview'
 
 // ** Redux Imports
 import { useSelector } from 'react-redux'
@@ -85,9 +84,7 @@ const Dashboard = () => {
                 icon={<HelpCircleOutline />}
               />
             </Grid>
-            <Grid item xs={12}>
-              <StockTodayOverview stockInfo={statsData?.stockInfo} />
-            </Grid>
+            <Grid item xs={12}></Grid>
           </>
         ) : (
           <></>

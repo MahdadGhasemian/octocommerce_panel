@@ -94,40 +94,6 @@ const navigation = (isInternalUser: boolean): VerticalNavItemsType => {
       path: '/invoice/list'
     },
     {
-      sectionTitle: 'انبارداری',
-      hidden
-    },
-    {
-      title: 'انبارها',
-      icon: HomeOutline,
-      path: '/warehouse/management',
-      hidden
-    },
-    {
-      title: 'رسید انبار',
-      icon: HomeImportOutline,
-      path: '/warehouse/inventory/input',
-      hidden
-    },
-    {
-      title: 'حواله انبار',
-      icon: HomeExportOutline,
-      path: '/warehouse/inventory/output',
-      hidden
-    },
-    {
-      title: 'انتقال بین انبارها',
-      icon: HomeSwitchOutline,
-      path: '/warehouse/inventory/transfer',
-      hidden
-    },
-    {
-      title: 'موجودی',
-      icon: ClipboardListOutline,
-      path: '/warehouse/stock',
-      hidden
-    },
-    {
       sectionTitle: 'پشتیبانی',
       hidden
     },
