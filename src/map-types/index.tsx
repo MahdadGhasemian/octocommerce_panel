@@ -2,7 +2,6 @@ import {
   DeliveryChargeType,
   DeliveryPricingType,
   DeliveryType,
-  InventoryType,
   MaterialUnit,
   OperatorType,
   PaymentType
@@ -44,9 +43,4 @@ export const MaterialUnitMap = new Map<MaterialUnit, string>([
 export const OperatorTypeMap = new Map<OperatorType, string>([
   [OperatorType.Negative, 'خروج'],
   [OperatorType.Positive, 'ورود']
-])
-
-export const InventoryTypeMap = new Map<InventoryType, string>([
-  [InventoryType.Input, 'رسید'],
-  [InventoryType.Output, 'حواله']
 ])

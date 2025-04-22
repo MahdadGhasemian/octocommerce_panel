@@ -62,12 +62,6 @@ export enum DeliveryStatus {
   Delivered = 'delivered'
 }
 
-export enum InventoryType {
-  Input = 'input',
-  Output = 'output',
-  Transfer = 'transfer'
-}
-
 export enum OperatorType {
   Positive = 'positive',
   Negative = 'negative'
@@ -134,7 +128,6 @@ export type Setting = {
 
 export type StockInfoModel = {
   id: number
-  warehouse_id: number
   product_id: number
   product_code: string
   product_title: string
@@ -143,8 +136,6 @@ export type StockInfoModel = {
 export type NotAssignedSalesModel = {
   order_item_id: number
   order_item_quantity: number
-  inventory_items_count: number
-  inventory_items: Array<number>
   product_id: number
   product_title: string
   product_code: string
@@ -259,6 +250,7 @@ export type Product = {
   part_number: string
   product_type: ProductType
   keywords: string[]
+  available_quantity: number
   sale_price: number
   discount_percentage: number
   discount_amount: number
@@ -281,7 +273,6 @@ export type OrderItem = {
   quantity: number
   order_id: number
   product: Product
-  inventory_items?: Array<InventoryItem>
   created_at: Date
   updated_at: Date
 }
@@ -398,91 +389,23 @@ export type Delivery = {
   updated_at: Date
 }
 
-export type Warehouse = {
-  id: number
-  title: string
-  is_virtualy: boolean
-  address: string
-  image: string
-  description: string
-  created_at: Date
-  updated_at: Date
-}
-
-export type WarehouseInfo = {
-  id: number
-  title: string
-  is_virtualy: boolean
-  image: string
-  description: string
-}
-
-export type Inventory = {
-  id: number
-  inventory_number?: number
-  inventory_date: Date | string
-  inventory_type: InventoryType
-  warehouse_from_id: number
-  warehouse_to_id: number
-  inventory_items: InventoryItem[]
-  inventory_description?: string
-  created_by_account_id: number
-  created_by: User
-  updated_by_account_id: number
-  updated_by: User
-  created_at: Date
-  updated_at: Date
-}
-
-export type InventoryItem = {
-  id: number
-  inventory_id: number
-  inventory: Inventory
-  operator_type: OperatorType
-  warehouse_id: number
-  warehouse: Warehouse
-  warehouse_from_id: number
-  warehouse_from: Warehouse
-  warehouse_to_id: number
-  warehouse_to: Warehouse
-  product_id: number
-  product: Product
-  unit: MaterialUnit
-  quantity: number
-  description: string
-  order_item_id: number
-  order_item: OrderItem
-  created_at: Date
-  updated_at: Date
-}
-
 export type Stock = {
   quantity: number
-  warehouse_id: number
-  warehouse: Warehouse
   product_id: number
   product: Product
-  inventory_item_id: number
-  inventory_item: InventoryItem
 }
 
 export type StockData = {
-  warehouse_id: number
   product_id: number
   product_name: string
   product_code: string
-  warehouse_title: string
   total_quantity: number
 }
 
 export type StockInfo = {
   id: number
-  warehouse_id: number
-  warehouse: WarehouseInfo
   product_id: number
   product: Product
-  inventory_item_id: number
-  inventory_item: InventoryItem
   created_at: Date
   updated_at: Date
 }
@@ -928,173 +851,6 @@ class BasicService {
     return api.patch(`/store/payments/${id}/status/confirm`, { rejected_note }).then(response => {
       return response?.data
     })
-  }
-
-  // Warehouse
-  getAllWarehouse(
-    limit?: number,
-    page?: number,
-    search?: string,
-    columnFilters?: InputColumnFiltersModel[],
-    sorting?: InputSortingModel[]
-  ): Promise<ApiListResponse<Warehouse>> {
-    const params = createParams(limit, page, search, columnFilters, sorting)
-
-    return api
-      .get('/store/warehouses', {
-        params
-      })
-      .then(response => {
-        return response?.data
-      })
-  }
-
-  createWarehouse(warehouse: Partial<Warehouse>): Promise<Warehouse> {
-    return api.post('/store/warehouses', warehouse).then(response => {
-      return response?.data
-    })
-  }
-
-  getWarehouse(id: number): Promise<Warehouse> {
-    return api.get(`/store/warehouses/${id}`).then(response => {
-      return response?.data
-    })
-  }
-
-  editWarehouse(id: number, warehouse: Partial<Warehouse>): Promise<Warehouse> {
-    return api.patch(`/store/warehouses/${id}`, warehouse).then(response => {
-      return response?.data
-    })
-  }
-
-  deleteWarehouse(id: number): Promise<unknown> {
-    return api.delete(`/store/warehouses/${id}`).then(response => {
-      return response?.data
-    })
-  }
-
-  // Inventory
-  getAllInventory(
-    limit?: number,
-    page?: number,
-    search?: string,
-    columnFilters?: InputColumnFiltersModel[],
-    sorting?: InputSortingModel[]
-  ): Promise<ApiListResponse<Inventory>> {
-    const params = createParams(limit, page, search, columnFilters, sorting)
-
-    return api
-      .get('/store/inventories/', {
-        params
-      })
-      .then(response => {
-        return response?.data
-      })
-  }
-
-  createInventory(inventory: Partial<Inventory>): Promise<Inventory> {
-    return api.post('/store/inventories', inventory).then(response => {
-      return response?.data
-    })
-  }
-
-  getInventory(id: number): Promise<Inventory> {
-    return api.get(`/store/inventories/${id}`).then(response => {
-      return response?.data
-    })
-  }
-
-  editInventory(id: number, inventory: Partial<Inventory>): Promise<Inventory> {
-    return api.patch(`/store/inventories/${id}`, inventory).then(response => {
-      return response?.data
-    })
-  }
-
-  deleteInventory(id: number): Promise<unknown> {
-    return api.delete(`/store/inventories/${id}`).then(response => {
-      return response?.data
-    })
-  }
-
-  editInventoryItem(id: number, inventoryItem: Partial<InventoryItem>): Promise<InventoryItem> {
-    return api.patch(`/store/inventories/${id}/item`, inventoryItem).then(response => {
-      return response?.data
-    })
-  }
-
-  deleteInventoryItem(id: number): Promise<unknown> {
-    return api.delete(`/store/inventories/${id}/item`).then(response => {
-      return response?.data
-    })
-  }
-
-  getAllInventoryItem(
-    limit?: number,
-    page?: number,
-    search?: string,
-    columnFilters?: InputColumnFiltersModel[],
-    sorting?: InputSortingModel[],
-    inventory_type: string | InventoryType = InventoryType.Input
-  ): Promise<ApiListResponse<InventoryItem>> {
-    const params = createParams(limit, page, search, columnFilters, sorting)
-
-    return api
-      .get(`/store/inventories/items/items/${inventory_type}`, {
-        params
-      })
-      .then(response => {
-        return response?.data
-      })
-  }
-
-  getInventoryStock(
-    limit?: number,
-    page?: number,
-    search?: string,
-    columnFilters?: InputColumnFiltersModel[],
-    sorting?: InputSortingModel[]
-  ): Promise<ApiListResponse<StockData>> {
-    const params = createParams(limit, page, search, columnFilters, sorting)
-
-    return api
-      .get('/store/inventories/items/stock/stock', {
-        params
-      })
-      .then(response => {
-        return response?.data
-      })
-  }
-
-  getInventoryStockInfo(
-    limit?: number,
-    page?: number,
-    search?: string,
-    columnFilters?: InputColumnFiltersModel[],
-    sorting?: InputSortingModel[]
-  ): Promise<ApiListResponse<StockInfo>> {
-    const params = createParams(limit, page, search, columnFilters, sorting)
-
-    return api
-      .get('/store/inventories/items/stock/stock/info', {
-        params
-      })
-      .then(response => {
-        return response?.data
-      })
-  }
-
-  getInventoryStockVirtualy(productId: number): Promise<{ available_quantity: number }> {
-    return api.get(`/store/inventories/stock/stock/product/${productId}/virtualy`).then(response => {
-      return response?.data
-    })
-  }
-
-  updateInventoryStockVirtualy(productId: number, available_quantity: number): Promise<{ available_quantity: number }> {
-    return api
-      .patch(`/store/inventories/stock/stock/product/${productId}/virtualy`, { available_quantity })
-      .then(response => {
-        return response?.data
-      })
   }
 
   // Review

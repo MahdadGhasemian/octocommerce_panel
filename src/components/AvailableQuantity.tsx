@@ -7,9 +7,6 @@ import { IconButton, TextField } from '@mui/material'
 // ** Icon Imports
 import { Update } from '@mui/icons-material'
 
-// ** Service Imports
-import basicService from '@/services/basic.service'
-
 export type Props = {
   product_id: number
 }
@@ -26,8 +23,8 @@ const AvailableQuantity = (props: Props) => {
   // ** Functions
   const handleAvailableQuantityUpdate = async () => {
     setLoading(true)
-    const { available_quantity } = await basicService.updateInventoryStockVirtualy(product_id, availableQuantity)
-    setAvailableQuantity(available_quantity)
+    // const { available_quantity } = await basicService.updateInventoryStockVirtualy(product_id, availableQuantity)
+    // setAvailableQuantity(available_quantity)
     setAvailableQuantityChanged(false)
     setLoading(false)
   }
@@ -35,8 +32,8 @@ const AvailableQuantity = (props: Props) => {
   useEffect(() => {
     const fetchStock = async () => {
       setLoading(true)
-      const { available_quantity } = await basicService.getInventoryStockVirtualy(product_id)
-      setAvailableQuantity(available_quantity)
+      // const { available_quantity } = await basicService.getInventoryStockVirtualy(product_id)
+      // setAvailableQuantity(available_quantity)
       setAvailableQuantityChanged(false)
       setLoading(false)
     }

@@ -72,7 +72,6 @@ import ProductExternalSeller from '../ProductExternalSeller'
 // ** Redux Imports
 import { store } from '@/redux/store'
 import { toastError, toastSuccess } from '@/redux/slices/snackbarSlice'
-import AvailableQuantity from '../AvailableQuantity'
 import KeywordInput from '@/components/KeywordInput'
 
 // ** Map Types Imports
@@ -278,7 +277,7 @@ const TableProduct = (props: TableProductProps) => {
             await BasicService.deleteProduct(id)
 
             setRefreshKey(key => key + 1)
-          } catch (error) { }
+          } catch (error) {}
         })
         .catch()
     }
@@ -312,7 +311,7 @@ const TableProduct = (props: TableProductProps) => {
       dispatch(toastSuccess('محصول جدید با موفقیت ایجاد شد.'))
 
       setRefreshKey(key => key + 1)
-    } catch (error) { }
+    } catch (error) {}
   }, [])
 
   const getCommonEditTextFieldProps = useCallback(
@@ -325,8 +324,8 @@ const TableProduct = (props: TableProductProps) => {
             cell.column.id === 'email'
               ? validateEmail(event.target.value)
               : cell.column.id === 'age'
-                ? validateAge(+event.target.value)
-                : validateRequired(event.target.value)
+              ? validateAge(+event.target.value)
+              : validateRequired(event.target.value)
           if (!isValid) {
             //set validation error for cell if invalid
             setValidationErrors({
@@ -611,9 +610,9 @@ const TableProduct = (props: TableProductProps) => {
         muiToolbarAlertBannerProps={
           isError
             ? {
-              color: 'error',
-              children: 'خطا در دریافت اطلاعات'
-            }
+                color: 'error',
+                children: 'خطا در دریافت اطلاعات'
+              }
             : undefined
         }
         onColumnFiltersChange={setColumnFilters}
@@ -732,6 +731,7 @@ export const CreateEditModal = ({
     part_number: '',
     product_type: ProductType.Unknown,
     keywords: [],
+    available_quantity: 0,
     sale_price: 0,
     discount_percentage: 0,
     discount_amount: 0,
@@ -861,6 +861,10 @@ export const CreateEditModal = ({
     if (value) setValues({ ...values, discount_amount: value, discount_percentage })
   }
 
+  const handleAvailableQuantityChange = async (value: number) => {
+    if (value) setValues({ ...values, available_quantity: value })
+  }
+
   const getExpandedNodes = (categoryId?: number | string, tree?: Array<CategoryTree>) => {
     // This function recursively finds and returns all parent node IDs up to the root
     const nodes: string[] = []
@@ -914,13 +918,7 @@ export const CreateEditModal = ({
           <Grid container spacing={4} marginY={4}>
             {/* Product Code */}
             <Grid item xs={12} md={3}>
-              <TextField
-                label='کد کالا'
-                name='product_code'
-                value={values.product_code}
-                disabled
-                fullWidth
-              />
+              <TextField label='کد کالا' name='product_code' value={values.product_code} disabled fullWidth />
             </Grid>
             {/* Name */}
             <Grid item xs={12} md={9}>
@@ -1023,7 +1021,16 @@ export const CreateEditModal = ({
             </Grid>
             {/* Available Quantity */}
             <Grid item xs={12} md={4}>
-              <AvailableQuantity product_id={values.id} />
+              <TextField
+                label='موجودی'
+                name='available_quantity'
+                value={values.available_quantity}
+                onChange={e => handleAvailableQuantityChange(+e.target.value)}
+                InputProps={{
+                  inputComponent: NumericFormatCustom as any
+                }}
+                fullWidth
+              />
             </Grid>
             {/* Is Online Payment Allowed */}
             <Grid item xs={12} md={2}>
