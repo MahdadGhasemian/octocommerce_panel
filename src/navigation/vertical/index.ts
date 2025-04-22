@@ -155,11 +155,6 @@ const navigation = (isInternalUser: boolean): VerticalNavItemsType => {
       sectionTitle: 'تنظیمات'
     },
     {
-      title: 'تنظیمات کاربری',
-      icon: AccountCogOutline,
-      path: '/account-settings'
-    },
-    {
       title: 'تنظیمات سیستم',
       icon: CogOutline,
       path: '/settings',

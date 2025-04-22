@@ -63,6 +63,10 @@ const UserDropdown = () => {
     }
   }
 
+  const handleUserSetting = () => {
+    router.push('/account-settings')
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       const myWallet = await BasicService.getMyWallet()
@@ -97,28 +101,31 @@ const UserDropdown = () => {
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       >
-        <Box sx={{ pt: 2, pb: 3, px: 4 }}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Badge
-              overlap='circular'
-              badgeContent={<BadgeContentSpan />}
-              anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-            >
-              <Avatar
-                alt={account.full_name}
-                sx={{ width: '2.5rem', height: '2.5rem' }}
-                src={`${account.avatar}?width=120`}
-                imgProps={{ crossOrigin: 'use-credentials' }}
-              />
-            </Badge>
-            <Box sx={{ display: 'flex', marginLeft: 3, alignItems: 'flex-start', flexDirection: 'column' }}>
-              <Typography sx={{ fontWeight: 600 }}>{account.full_name}</Typography>
-              <Typography variant='body2' sx={{ fontSize: '0.8rem', color: 'text.disabled' }}>
-                {account.full_name}
-              </Typography>
+        <Button fullWidth onClick={handleUserSetting}>
+          <Box sx={{ pt: 2, pb: 3, px: 4 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Badge
+                overlap='circular'
+                badgeContent={<BadgeContentSpan />}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+              >
+                <Avatar
+                  alt={account.full_name}
+                  sx={{ width: '2.5rem', height: '2.5rem' }}
+                  src={`${account.avatar}?width=120`}
+                  imgProps={{ crossOrigin: 'use-credentials' }}
+                />
+              </Badge>
+              <Box sx={{ display: 'flex', marginLeft: 3, alignItems: 'flex-start', flexDirection: 'column' }}>
+                <Typography sx={{ fontWeight: 600 }}>{account.full_name}</Typography>
+                <Typography variant='body2' sx={{ fontSize: '0.8rem', color: 'text.disabled' }}>
+                  {account.full_name}
+                </Typography>
+              </Box>
             </Box>
           </Box>
-        </Box>
+        </Button>
+
         {/* <Divider sx={{ mt: 0, mb: 1 }} />
         <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
           <Box sx={styles}>
